@@ -2,7 +2,7 @@
 /*
    Plugin Name: ASMAC Cornerstone Groups Condition
    Description: Adds itthinx Groups group membership to themeco's Cornerstone conditions
-   Version: 0.5
+   Version: 1.0
    Author: Jeff Kellem
    Author URI: https://slantedhall.com/
    License: BSD-2-Clause
