@@ -8,6 +8,7 @@ Adds support to use [itthinx Groups](https://github.com/itthinx/groups) group me
 * PHP 8.0.28 -- tested with PHP 8.0.28.
 * themeco [Cornerstone](https://theme.co/docs/cornerstone-overview) builder -- tested with Cornerstone 7.2.5 using Pro theme 6.2.5.
 * itthinx [Groups WordPress plugin](https://wordpress.org/plugins/groups/) -- tested with Groups 2.18.0
+* (Optional, but useful): [ASMAC Cornerstone Condition Rules Monitor](https://github.com/asmac-org/asmac-cornerstone-condition-rules-monitor) plugin -- sends email if a condition rule is defined on a page when the rule function no longer exists.
 
 ## Installation
 
@@ -31,7 +32,7 @@ At the moment, there's no way to preview with various group membership. That mig
 
 ## Credits
 
-Written by Jeff Kellem for ASMAC (American Society of Music Arrangers and Composers). Instead of writing up notes of why themeco should add support for Groups, the initial code was written, though the [docs for conditions](https://theme.co/docs/cornerstone-developer-guide#conditions) is lacking.
+Written by Jeff Kellem for ASMAC (American Society of Music Arrangers and Composers). Instead of writing up notes of why themeco should add support for Groups, the initial code was written, though the [docs for conditions](https://theme.co/docs/cornerstone-developer-guide#conditions) are lacking.
 
-© 2023 Jeff Kellem
+© 2023 Jeff Kellem<br/>
 License: BSD-2-CLAUSE
