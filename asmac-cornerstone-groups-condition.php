@@ -29,6 +29,8 @@ class ASMAC_Cornerstone_Groups_Condition {
 		// right now, just using user is member of. Similar to built-in global conditions and assignments in Cornerstone.
 		add_filter( 'cs_assignment_contexts', [$this, 'condition_contexts'] );
 		add_filter( 'cs_condition_rule_groups_is_member', [ $this, 'condition_rule_groups_is_member' ], 10, 2 );
+		add_filter( 'cs_condition_rule_groups_user_can_read', [ $this, 'condition_rule_groups_user_can_read' ], 10, 2 );
+
 	}
 
 	public function condition_contexts( $contexts ) {
@@ -48,7 +50,21 @@ class ASMAC_Cornerstone_Groups_Condition {
 					'type'	=> 'select',
 					'choices' => $this::get_groups_options()
 				]
-			]
+			],
+			[
+				'key' => 'groups:user_can_read',
+				'label' => __('Current User Groups Read Current Post', 'group'),	// FIXME: rework and use different group
+				'toggle' => [
+					'type' => 'boolean',
+					'labels' => [
+						__('can', 'cornerstone'),
+						__('cannot', 'cornerstone'),
+					]
+				],
+				'criteria' => [
+					'type' => 'static'
+				]
+			],
 		];
 	}
 
@@ -76,6 +92,15 @@ class ASMAC_Cornerstone_Groups_Condition {
 		$is_a_member = Groups_User_Group::read( get_current_user_id() , $group_id );
 
 		return $is_a_member;
+	}
+
+	public function condition_rule_groups_user_can_read( $result, $args ) {
+		$post_id = get_the_ID();
+		$user_id = get_current_user_id();
+		if ($post_id) {
+			return Groups_Post_Access::user_can_read_post( $post_id, $user_id );
+		}
+		return false;
 	}
 
 }

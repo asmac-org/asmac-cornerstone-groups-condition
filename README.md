@@ -18,7 +18,13 @@ Adds support to use [itthinx Groups](https://github.com/itthinx/groups) group me
 
 ## Usage
 
-Once activated, in the Cornerstone [conditions and assignments](https://theme.co/docs/conditions-and-assignments) area, you'll see a new option: `Current User Groups Membership` with a set of options based on the groups configured in the [Groups](https://docs.itthinx.com/document/groups/setup/groups/) WordPress plugin.
+Once activated, in the Cornerstone [conditions and assignments](https://theme.co/docs/conditions-and-assignments) area, you'll see two new options:
+
+* `Current User Groups Membership` with a set of options based on the groups configured in the [Groups](https://docs.itthinx.com/document/groups/setup/groups/) WordPress plugin.
+* `Current User Groups Read Current Post` -- Checks if the current user can or cannot read the current post.
+  * Future?: maybe will consider adding an option to select a specific post.
+  * Use here is with some modified `Groups` filters for a specific post type to allow a particular custom post type to show its content in a different way but show the full content for those in the group(s) specified for read access on the post.
+    * The other option is to have a publicly readable post with the `Group` conditions set for sections of the content. The above allows marking of some of those CPTs as publicly readable and others partially readable simply based on the read access setting.
 
 ![image](./images/pulldown.png)
 
